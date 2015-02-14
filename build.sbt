@@ -15,4 +15,6 @@ libraryDependencies ++= Seq(
 
 libraryDependencies += "io.spray" %%  "spray-json" % "1.3.1"
 
+libraryDependencies += "org.mockito" % "mockito-core" % "1.8.5"
+
 resolvers += "Scalaz Bintray Repo" at "http://dl.bintray.com/scalaz/releases"
