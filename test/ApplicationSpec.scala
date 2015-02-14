@@ -4,7 +4,9 @@ import org.junit.runner._
 
 import play.api.test._
 import play.api.test.Helpers._
-
+import spray.json._
+import controllers.Application.MyJsonProtocol._
+import controllers.Application.Color
 /**
  * Add your spec here.
  * You can mock out a whole application including requests, plugins etc.
@@ -25,6 +27,14 @@ class ApplicationSpec extends Specification {
       status(home) must equalTo(OK)
       contentType(home) must beSome.which(_ == "text/html")
       contentAsString(home) must contain ("Your new application is ready.")
+    }
+
+    "return black color" in new WithApplication{
+      val home = route(FakeRequest(GET, "/black")).get
+
+      status(home) must equalTo(OK)
+      contentType(home) must beSome.which(_ == "application/json")
+      contentAsString(home).parseJson.convertTo[Color] must_==(new Color("black",0,0,0))
     }
   }
 }

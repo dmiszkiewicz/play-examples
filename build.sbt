@@ -12,3 +12,7 @@ libraryDependencies ++= Seq(
   cache,
   ws
 )
+
+libraryDependencies += "io.spray" %%  "spray-json" % "1.3.1"
+
+resolvers += "Scalaz Bintray Repo" at "http://dl.bintray.com/scalaz/releases"
