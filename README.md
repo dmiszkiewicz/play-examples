@@ -7,3 +7,9 @@
 * play - Play Framework makes it easy to build web applications with Java & Scala.
 
 I used activator template [Play Scala Seed](https://typesafe.com/activator/template/play-scala)
+
+#Description of content
+* app/controllers/Application contains class representing REST endpoints
+* app/model/ColorProvider contains case class for representing colors, ColorProvider, and ColorJsonProvider which help with serialization
+* test/ApplicationSpec contains some test with mockito
+* test/Integration contains sample integration test

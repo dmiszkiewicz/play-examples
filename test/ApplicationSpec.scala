@@ -1,3 +1,4 @@
+import model.{Color, ColorProvider, ColorJsonProtocol}
 import org.specs2.mutable._
 import org.specs2.runner._
 import org.junit.runner._
@@ -6,7 +7,7 @@ import play.api.test._
 import play.api.test.Helpers._
 import spray.json._
 import controllers._
-import controllers.MyJsonProtocol._
+import ColorJsonProtocol._
 
 
 import org.specs2.mock.Mockito
