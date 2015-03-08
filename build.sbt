@@ -1,18 +1,12 @@
-name := """play-examples"""
+name := """test"""
 
-version := "1.0-SNAPSHOT"
+version := "1.0"
 
-lazy val root = (project in file(".")).enablePlugins(PlayScala)
+scalaVersion := "2.11.5"
 
-scalaVersion := "2.11.1"
+// Change this to another test framework if you prefer
+libraryDependencies += "org.scalatest" %% "scalatest" % "2.2.4" % "test"
 
-libraryDependencies ++= Seq(
-  jdbc,
-  anorm,
-  cache,
-  ws
-)
+// Uncomment to use Akka
+//libraryDependencies += "com.typesafe.akka" % "akka-actor_2.11" % "2.3.9"
 
-libraryDependencies += "io.spray" %%  "spray-json" % "1.3.1"
-
-libraryDependencies += "org.mockito" % "mockito-core" % "1.8.5"
