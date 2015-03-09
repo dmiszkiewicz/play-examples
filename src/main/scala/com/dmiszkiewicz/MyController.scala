@@ -1,14 +1,14 @@
 package com.dmiszkiewicz
 
-import com.dmiszkiewicz.repository.Repository
+import MyJsonProtocol._
 import play.api.mvc._
+import spray.json._
 
 class MyController(repository: Repository) extends Controller {
 
-  def getAllGraphsNames(city: String) = Action {
+  def getTemperature(city: String) = Action {
     repository.getTemperature(city) match {
-        //TODO return temperature if available
-      case Some(t) => Ok
+      case Some(t) => Ok(t.toJson.toString()).as("application/json")
       case None => NotFound
     }
   }
