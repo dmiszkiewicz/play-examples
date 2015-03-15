@@ -1,4 +1,4 @@
-package com.dmiszkiewicz
+package controllers
 
 import spray.json.DefaultJsonProtocol
 

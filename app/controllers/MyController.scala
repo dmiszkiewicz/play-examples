@@ -1,4 +1,4 @@
-package com.dmiszkiewicz
+package controllers
 
 import MyJsonProtocol._
 import play.api.mvc._
@@ -14,3 +14,7 @@ class MyController(repository: Repository) extends Controller {
   }
 
 }
+
+object MyController extends MyController(new Repository {
+  override def getTemperature(city: String): Option[Temperature] = Some(Temperature(10))
+})

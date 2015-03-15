@@ -1,15 +1,21 @@
-name := """test"""
+name := """play-minimal"""
 
-version := "1.0"
+version := "1.0-SNAPSHOT"
 
-scalaVersion := "2.11.5"
+lazy val root = (project in file(".")).enablePlugins(PlayScala)
+
+scalaVersion := "2.11.1"
 
 libraryDependencies += "io.spray" %%  "spray-json" % "1.3.1"
 
 libraryDependencies += "org.specs2" %% "specs2-core" % "3.0.1" % "test"
 
-libraryDependencies += "com.typesafe.play" % "play_2.11" % "2.4.0-M2"
-
-libraryDependencies += "com.typesafe.play" % "play-test_2.11" % "2.4.0-M2" % "test"
-
 resolvers += "Scalaz Bintray Repo" at "http://dl.bintray.com/scalaz/releases"
+
+
+libraryDependencies ++= Seq(
+  jdbc,
+  anorm,
+  cache,
+  ws
+)

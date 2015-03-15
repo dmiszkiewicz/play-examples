@@ -1,10 +1,10 @@
-import com.dmiszkiewicz.{Repository, MyJsonProtocol, Temperature, MyController}
-import MyJsonProtocol._
-import org.specs2._
-import specification._
-import play.api.test._
-import play.api.test.Helpers._
+import controllers.MyJsonProtocol
+import controllers._
 import spray.json._
+import MyJsonProtocol._
+import org.specs2.specification._
+import play.api.test.Helpers._
+import play.api.test._
 
 
 class ApplicationSpec extends script.Specification with Groups {
