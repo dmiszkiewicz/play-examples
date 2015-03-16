@@ -6,6 +6,10 @@ import spray.json._
 
 class MyController(repository: Repository) extends Controller {
 
+  def index = Action {
+    Ok(views.html.index("Your new application is ready."))
+  }
+
   def getTemperature(city: String) = Action {
     repository.getTemperature(city) match {
       case Some(t) => Ok(t.toJson.toString()).as("application/json")

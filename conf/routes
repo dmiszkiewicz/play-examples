@@ -3,6 +3,7 @@
 # ~~~~
 
 # Home page
+GET     /                           controllers.MyController.index
 GET     /:city                      controllers.MyController.getTemperature(city: String)
 
 # Map static resources from the /public folder to the /assets URL path
