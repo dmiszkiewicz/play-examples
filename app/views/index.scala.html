@@ -1,7 +1,14 @@
-@(message: String)
+<!doctype html>
+<html ng-app>
+<head>
+    <title>Hello AngularJS</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script>
+    <script src="assets/javascripts/script.js"></script>
+</head>
 
-@main("Welcome to Play") {
-
-    @play20.welcome(message)
-
-}
+<body>
+<div ng-controller="Hello">
+    <p>In Warsaw there is {{greeting.temperature}} celsius.</p>
+</div>
+</body>
+</html>
